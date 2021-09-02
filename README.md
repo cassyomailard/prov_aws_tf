@@ -1,3 +1,3 @@
 # Infra Cloud - AWS
 
-Esse projeto foi criado para estudo de infra como código e para facilitar o provisionamento de um ambiente com 3 instancias na aws, já configurando security_group com teraform e configurando essas instancias com os recursos e serviços necessários para criação de um cluster kubernetes.
+Esse projeto foi criado para estudo de infra como código e para facilitar o provisionamento de um ambiente com instancias aws. Configurando security_group com teraform e instalando recursos e serviços necessários para criação de cluster kubernetes.
