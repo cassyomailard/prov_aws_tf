@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+  - name: "cria arquivo"
+  - shell: "echo 'teste de escrita' >> teste.txt"
+#ansible-playbook -i hosts ansibleconf.yml -u ubuntu --private-key /home/cmailard/.ssh/kco-aws
