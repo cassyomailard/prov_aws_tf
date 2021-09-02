@@ -1,6 +1,6 @@
 resource "aws_security_group" "k8s_full_access" {
-  name        = "k8s_full_access"
-  description = "Treinamento k8s linuxtips full access"
+  name        = [var.security_group.name]
+  description = "Inserir uma descrição, opcional"
   
   ingress = [
     {
@@ -31,6 +31,6 @@ resource "aws_security_group" "k8s_full_access" {
   ]
 
   tags = {
-    Name = "k8s_full_access"
+    Name = [var.security_group.name]
   }
 }
