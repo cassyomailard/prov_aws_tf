@@ -10,8 +10,8 @@ variable "instance_type" {
     }
 }
 
-variable "instance_type" {
+variable "security_group" {
     default = {
-        "micro" = "t2.micro" #Substituir pelo tipo de instancia desejada
+        "name" = "k8s_full_access" #Substituir pelo tipo de instancia desejada
     }
 }
