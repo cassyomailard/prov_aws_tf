@@ -12,6 +12,6 @@ variable "instance_type" {
 
 variable "security_group" {
     default = {
-        "name" = "k8s_full_access" #Substituir pelo tipo de instancia desejada
+        "name" = "k8s_full_access" #Substituir pelo nome da security group que deseja criar
     }
 }
