@@ -1,32 +1,13 @@
-#Provisionamento master
-resource "aws_instance" "master" {
-  ami = var.amis.ubuntu20
+#Provisionamento node1
+resource "aws_instance" "node1" {
+  ami = var.amis.ubuntu20 #variavel que identifica o id da ami
   instance_type = var.instance_type.micro
+  key_name = "id_rsa" #Crie ou importe para a aws uma chave de acesso ssh e adicione nesse campo
   associate_public_ip_address = true
+  private_ip = "x.x.x.x" #ip privado que o host deve receber
+  subnet_id = "subnet-14c1cb73" #id da subnet criada no arquivo security_group.tf, mudar o nome é opcional
   tags = {
-    Name = "master"
+    Name = "node1" #nome do host que será provisionado
   }
   vpc_security_group_ids = [aws_security_group.k8s_full_access.id]
 }
-
-# #Provisionamento node1
-# resource "aws_instance" "node1" {
-#   ami = var.amis.ubuntu20
-#   instance_type = var.instance_type.micro
-#   associate_public_ip_address = true
-#   tags = {
-#     Name = "node1"
-#   }
-#   vpc_security_group_ids = [aws_security_group.k8s_full_access.id]
-# }
-
-# #Provisionamento node2
-# resource "aws_instance" "node2" {
-#   ami = var.amis.ubuntu20
-#   instance_type = var.instance_type.micro
-#   associate_public_ip_address = true
-#   tags = {
-#     Name = "node2"
-#   }
-#   vpc_security_group_ids = [aws_security_group.k8s_full_access.id]
-#}
